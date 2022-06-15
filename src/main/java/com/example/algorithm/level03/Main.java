@@ -1,8 +1,5 @@
 package com.example.algorithm.level03;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -10,18 +7,35 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        List<Integer> answer = new ArrayList<>();
 
         for (int i = 1; i <= n; i++) {
-            answer.add(i);
-        }
+            int a = scanner.nextInt();
+            int b = scanner.nextInt();
 
-        Collections.sort(answer, Collections.reverseOrder());
+            int answer = a + b;
 
-        for (int t : answer) {
-            System.out.println(t);
+            System.out.println("Case #" + i + ":  " + answer);
         }
     }
+
+
+
+
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int n = scanner.nextInt();
+//        List<Integer> answer = new ArrayList<>();
+//
+//        for (int i = 1; i <= n; i++) {
+//            answer.add(i);
+//        }
+//
+//        Collections.sort(answer, Collections.reverseOrder());
+//
+//        for (int t : answer) {
+//            System.out.println(t);
+//        }
+//    }
 
 
 
