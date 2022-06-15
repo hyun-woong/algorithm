@@ -3,18 +3,40 @@ package com.example.algorithm.level02;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         int a = scanner.nextInt();
-        int b = scanner.nextInt();
 
-        if (a > b) {
-            System.out.println(">");
-        } else if (a < b){
-            System.out.println("<");
+        if (a >= 90) {
+            System.out.println("A");
+        } else if (a >= 80 && a <= 89){
+            System.out.println("B");
+        } else if (a >= 70 && a <= 79){
+            System.out.println("C");
+        } else if (a >= 60 && a <= 69) {
+            System.out.println("D");
         } else {
-            System.out.println("==");
+            System.out.println("F");
         }
+
     }
+
+
+
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//
+//        int a = scanner.nextInt();
+//        int b = scanner.nextInt();
+//
+//        if (a > b) {
+//            System.out.println(">");
+//        } else if (a < b){
+//            System.out.println("<");
+//        } else {
+//            System.out.println("==");
+//        }
+//    }
 }
