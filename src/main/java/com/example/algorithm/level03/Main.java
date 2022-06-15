@@ -1,20 +1,44 @@
 package com.example.algorithm.level03;
 
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int answer = 0;
+        int testCnt = Integer.parseInt(br.readLine());
+        int result;
 
-        for (int i = 0; i <= n; i++) {
-            answer += i;
+        for (int i = 0; i < testCnt; i++) {
+            String AB = br.readLine();
+            StringTokenizer st = new StringTokenizer(AB, " ");
+
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            result = a + b;
+
+            bw.write(String.valueOf(result));
+            bw.write("\n");
         }
-        System.out.println(answer);
+        bw.flush();
     }
+
+
+
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int n = scanner.nextInt();
+//
+//        int answer = 0;
+//
+//        for (int i = 0; i <= n; i++) {
+//            answer += i;
+//        }
+//        System.out.println(answer);
+//    }
 
 
 
