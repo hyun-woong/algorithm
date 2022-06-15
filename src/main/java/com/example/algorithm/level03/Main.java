@@ -6,14 +6,28 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int t = scanner.nextInt();
+        int n = scanner.nextInt();
 
-        for (int i = 0; i < t; i++) {
-            int a = scanner.nextInt();
-            int b = scanner.nextInt();
-            System.out.println(a + b);
+        int answer = 0;
+
+        for (int i = 0; i <= n; i++) {
+            answer += i;
         }
+        System.out.println(answer);
     }
+
+
+
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int t = scanner.nextInt();
+//
+//        for (int i = 0; i < t; i++) {
+//            int a = scanner.nextInt();
+//            int b = scanner.nextInt();
+//            System.out.println(a + b);
+//        }
+//    }
 
 
 //    public static void main(String[] args) {
