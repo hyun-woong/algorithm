@@ -1,30 +1,40 @@
 package com.example.algorithm.level03;
 
-import java.io.*;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
 
-        int testCnt = Integer.parseInt(br.readLine());
-        int result;
-
-        for (int i = 0; i < testCnt; i++) {
-            String AB = br.readLine();
-            StringTokenizer st = new StringTokenizer(AB, " ");
-
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
-            result = a + b;
-
-            bw.write(String.valueOf(result));
-            bw.write("\n");
+        for (int i = 1; i <= n; i++) {
+            System.out.println(i);
         }
-        bw.flush();
     }
+
+
+
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//
+//        int testCnt = Integer.parseInt(br.readLine());
+//        int result;
+//
+//        for (int i = 0; i < testCnt; i++) {
+//            String AB = br.readLine();
+//            StringTokenizer st = new StringTokenizer(AB, " ");
+//
+//            int a = Integer.parseInt(st.nextToken());
+//            int b = Integer.parseInt(st.nextToken());
+//            result = a + b;
+//
+//            bw.write(String.valueOf(result));
+//            bw.write("\n");
+//        }
+//        bw.flush();
+//    }
 
 
 
