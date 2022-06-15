@@ -9,23 +9,45 @@ public class Main {
 
         int h = scanner.nextInt();
         int m = scanner.nextInt();
+        int needM = scanner.nextInt();
 
-        if (h == 0) {
-            h = 24;
+        int H = h * 60 + m + needM;
+
+        int aH = H / 60;
+        int aM = H % 60;
+
+        if (aH >= 24) {
+                aH -= 24;
         }
 
-        int hm = h * 60;
-        int answer = hm + m - 45;
-
-        int H = answer / 60;
-        int M = answer % 60;
-
-        if (H == 24) {
-            H = 0;
-        }
-
-        System.out.println(H +" " + M);
+        System.out.println(aH + " " + aM);
     }
+
+
+
+
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//
+//        int h = scanner.nextInt();
+//        int m = scanner.nextInt();
+//
+//        if (h == 0) {
+//            h = 24;
+//        }
+//
+//        int hm = h * 60;
+//        int answer = hm + m - 45;
+//
+//        int H = answer / 60;
+//        int M = answer % 60;
+//
+//        if (H == 24) {
+//            H = 0;
+//        }
+//
+//        System.out.println(H +" " + M);
+//    }
 
 
 //    public static void main(String[] args) {
