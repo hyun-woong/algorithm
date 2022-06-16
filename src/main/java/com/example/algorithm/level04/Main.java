@@ -6,26 +6,49 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int m = scanner.nextInt();
-        List<Double> numList = new ArrayList<>();
-        double cnt = 0;
+        int a = scanner.nextInt();
 
-        for (int i = 0; i < m; i++) {
-            double a = scanner.nextDouble();
-            numList.add(a);
-        }
 
-        Double max = numList.stream()
-                .mapToDouble(x -> x)
-                .max()
-                .getAsDouble();
-
-        for (double t : numList) {
-            double answer = t/max * 100;
-            cnt += answer;
-        }
-        System.out.println(cnt / m);
+        for (int i = 0; i < a; i++){
+            String x = scanner.next();
+            char[] arr = x.toCharArray();
+            int cnt = 0;
+            int answer = 0;
+            for (int j = 0; j < arr.length; j++) {
+                String str = String.valueOf(arr[j]);
+                if (str.equals("O")) {
+                    cnt++;
+                    answer += cnt;
+                } else {
+                    cnt = 0;
+                }
+                }
+            System.out.println(answer);
+            }
     }
+
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int m = scanner.nextInt();
+//        List<Double> numList = new ArrayList<>();
+//        double cnt = 0;
+//
+//        for (int i = 0; i < m; i++) {
+//            double a = scanner.nextDouble();
+//            numList.add(a);
+//        }
+//
+//        Double max = numList.stream()
+//                .mapToDouble(x -> x)
+//                .max()
+//                .getAsDouble();
+//
+//        for (double t : numList) {
+//            double answer = t/max * 100;
+//            cnt += answer;
+//        }
+//        System.out.println(cnt / m);
+//    }
 
 //    Integer max = integerList.stream()
 //                .mapToInt(y -> y)
