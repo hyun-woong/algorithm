@@ -6,40 +6,54 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int c = scanner.nextInt();
 
-        int x = a * b * c;
-
-        String y = String.valueOf(x);
-        List<String> arrList = new ArrayList<>();
-
-        Map<String, Integer> map = new HashMap<>();
-
-        for (int i = 0; i < y.length(); i++) {
-            String z = String.valueOf(y.charAt(i));
-            arrList.add(z);
-        }
-
-        for (String arr : arrList) {
-            Integer cnt = map.get(arr);
-            if (cnt == null) {
-                map.put(arr, 1);
-            } else {
-                map.put(arr, cnt +1);
-            }
-        }
+        HashSet<Integer> set = new HashSet<>();
 
         for (int i = 0; i < 10; i++) {
-            String v = String.valueOf(i);
-            if (map.get(v) == null){
-                System.out.println("0");
-            } else {
-                System.out.println(map.get(v));
-            }
+            int a = scanner.nextInt();
+            int answer = a % 42;
+            set.add(answer);
         }
+        System.out.println(set.size());
+
     }
+
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int a = scanner.nextInt();
+//        int b = scanner.nextInt();
+//        int c = scanner.nextInt();
+//
+//        int x = a * b * c;
+//
+//        String y = String.valueOf(x);
+//        List<String> arrList = new ArrayList<>();
+//
+//        Map<String, Integer> map = new HashMap<>();
+//
+//        for (int i = 0; i < y.length(); i++) {
+//            String z = String.valueOf(y.charAt(i));
+//            arrList.add(z);
+//        }
+//
+//        for (String arr : arrList) {
+//            Integer cnt = map.get(arr);
+//            if (cnt == null) {
+//                map.put(arr, 1);
+//            } else {
+//                map.put(arr, cnt +1);
+//            }
+//        }
+//
+//        for (int i = 0; i < 10; i++) {
+//            String v = String.valueOf(i);
+//            if (map.get(v) == null){
+//                System.out.println("0");
+//            } else {
+//                System.out.println(map.get(v));
+//            }
+//        }
+//    }
 
 
 //    public static void main(String[] args) {
