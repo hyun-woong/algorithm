@@ -7,25 +7,53 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();
-
-
-        for (int i = 0; i < a; i++){
-            String x = scanner.next();
-            char[] arr = x.toCharArray();
-            int cnt = 0;
-            int answer = 0;
-            for (int j = 0; j < arr.length; j++) {
-                String str = String.valueOf(arr[j]);
-                if (str.equals("O")) {
-                    cnt++;
-                    answer += cnt;
-                } else {
-                    cnt = 0;
-                }
-                }
-            System.out.println(answer);
+        for (int i = 0; i < a; i++) {
+            int b = scanner.nextInt();
+            List<Double> numList = new ArrayList<>();
+            double sum = 0;
+            for (int j = 0; j < b; j++) {
+                double num = scanner.nextDouble();
+                numList.add(num);
+                sum += num;
             }
+            double avg = sum / b;
+            double cnt = 0;
+
+            for (double t : numList) {
+                if (t > avg) {
+                    cnt++;
+                }
+            }
+
+            double reAnswer = cnt / b * 100;
+
+            System.out.println(String.format("%.3f", reAnswer) + "%");
+
+        }
     }
+
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int a = scanner.nextInt();
+//
+//
+//        for (int i = 0; i < a; i++){
+//            String x = scanner.next();
+//            char[] arr = x.toCharArray();
+//            int cnt = 0;
+//            int answer = 0;
+//            for (int j = 0; j < arr.length; j++) {
+//                String str = String.valueOf(arr[j]);
+//                if (str.equals("O")) {
+//                    cnt++;
+//                    answer += cnt;
+//                } else {
+//                    cnt = 0;
+//                }
+//                }
+//            System.out.println(answer);
+//            }
+//    }
 
 //    public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
