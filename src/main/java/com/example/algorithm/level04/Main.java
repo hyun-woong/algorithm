@@ -15,7 +15,7 @@ public class Main {
         String y = String.valueOf(x);
         List<String> arrList = new ArrayList<>();
 
-        Map<String, Integer> map = new HashMap<String, Integer>();
+        Map<String, Integer> map = new HashMap<>();
 
         for (int i = 0; i < y.length(); i++) {
             String z = String.valueOf(y.charAt(i));
