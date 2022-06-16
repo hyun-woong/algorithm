@@ -7,16 +7,54 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            int a = scanner.nextInt();
-            int b = scanner.nextInt();
+        int x = scanner.nextInt();
+        int cnt = 0;
+        int N = x;
 
-            if (a == 0 && b == 0) {
+        while (true) {
+            N = ((N % 10) * 10) + (((N / 10) + (N % 10)) % 10);
+            cnt++;
+            if (x == N) {
+                System.out.println(cnt);
                 break;
             }
-            System.out.println(a + b);
-        }
+            }
     }
+
+
+
+
+
+
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//
+//        while (scanner.hasNextInt()) {
+//            int a = scanner.nextInt();
+//            int b = scanner.nextInt();
+//
+//            System.out.println(a + b);
+//        }
+//        scanner.close();
+//
+//    }
+
+
+
+
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//
+//        while (true) {
+//            int a = scanner.nextInt();
+//            int b = scanner.nextInt();
+//
+//            if (a == 0 && b == 0) {
+//                break;
+//            }
+//            System.out.println(a + b);
+//        }
+//    }
 
 
 
