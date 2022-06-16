@@ -6,17 +6,45 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int m = scanner.nextInt();
+        List<Double> numList = new ArrayList<>();
+        double cnt = 0;
 
-        HashSet<Integer> set = new HashSet<>();
-
-        for (int i = 0; i < 10; i++) {
-            int a = scanner.nextInt();
-            int answer = a % 42;
-            set.add(answer);
+        for (int i = 0; i < m; i++) {
+            double a = scanner.nextDouble();
+            numList.add(a);
         }
-        System.out.println(set.size());
 
+        Double max = numList.stream()
+                .mapToDouble(x -> x)
+                .max()
+                .getAsDouble();
+
+        for (double t : numList) {
+            double answer = t/max * 100;
+            cnt += answer;
+        }
+        System.out.println(cnt / m);
     }
+
+//    Integer max = integerList.stream()
+//                .mapToInt(y -> y)
+//                .max()
+//                .getAsInt();
+
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//
+//        HashSet<Integer> set = new HashSet<>();
+//
+//        for (int i = 0; i < 10; i++) {
+//            int a = scanner.nextInt();
+//            int answer = a % 42;
+//            set.add(answer);
+//        }
+//        System.out.println(set.size());
+//
+//    }
 
 //    public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
