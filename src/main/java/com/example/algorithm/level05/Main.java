@@ -3,40 +3,71 @@ package com.example.algorithm.level05;
 import java.io.*;
 import java.util.*;
 
-import static java.util.stream.Collectors.toMap;
-
 public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String x = br.readLine();
-        char[] reX = x.toCharArray();
-
-        Map<String, Integer> maps = new HashMap<>();
-        maps.put("ABC", 3);
-        maps.put("DEF", 4);
-        maps.put("GHI", 5);
-        maps.put("JKL", 6);
-        maps.put("MNO", 7);
-        maps.put("PQRS", 8);
-        maps.put("TUV", 9);
-        maps.put("WXYZ", 10);
-
+        int n = Integer.parseInt(br.readLine());
         int answer = 0;
 
-        for (char t : reX) {
-            Map<String, Integer> result = maps.entrySet().stream()
-                    .filter(entry -> entry.getKey().contains(String.valueOf(t)))
-                    .collect(toMap(Map.Entry::getKey, Map.Entry::getValue));
+        for (int i = 0; i < n; i++) {
+            String x = br.readLine();
+            char[] arr = x.toCharArray();
+            List<String> checkList = new ArrayList<>();
+            boolean check = true;
 
-            String re = String.valueOf(result.keySet())
-                    .replace("[", "")
-                    .replace("]", "");
-
-           answer += maps.get(re);
+            for (char a : arr) {
+                String t = String.valueOf(a);
+                if (checkList.size() == 0) {
+                    checkList.add(t);
+                } else if (checkList.contains(t) && checkList.get(checkList.size() - 1).equals(t)) {
+                    checkList.add(t);
+                } else if (!checkList.contains(t)) {
+                    checkList.add(t);
+                } else {
+                    check = false;
+                }
+            }
+            if (check == true) {
+                answer += 1;
+            }
         }
         System.out.println(answer);
     }
+
+
+
+
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        String x = br.readLine();
+//        char[] reX = x.toCharArray();
+//
+//        Map<String, Integer> maps = new HashMap<>();
+//        maps.put("ABC", 3);
+//        maps.put("DEF", 4);
+//        maps.put("GHI", 5);
+//        maps.put("JKL", 6);
+//        maps.put("MNO", 7);
+//        maps.put("PQRS", 8);
+//        maps.put("TUV", 9);
+//        maps.put("WXYZ", 10);
+//
+//        int answer = 0;
+//
+//        for (char t : reX) {
+//            Map<String, Integer> result = maps.entrySet().stream()
+//                    .filter(entry -> entry.getKey().contains(String.valueOf(t)))
+//                    .collect(toMap(Map.Entry::getKey, Map.Entry::getValue));
+//
+//            String re = String.valueOf(result.keySet())
+//                    .replace("[", "")
+//                    .replace("]", "");
+//
+//           answer += maps.get(re);
+//        }
+//        System.out.println(answer);
+//    }
 
 
 
