@@ -7,33 +7,48 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        int answer = 0;
+        String x = br.readLine();
+        String[] checks = new String[]{"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
 
-        for (int i = 0; i < n; i++) {
-            String x = br.readLine();
-            char[] arr = x.toCharArray();
-            List<String> checkList = new ArrayList<>();
-            boolean check = true;
-
-            for (char a : arr) {
-                String t = String.valueOf(a);
-                if (checkList.size() == 0) {
-                    checkList.add(t);
-                } else if (checkList.contains(t) && checkList.get(checkList.size() - 1).equals(t)) {
-                    checkList.add(t);
-                } else if (!checkList.contains(t)) {
-                    checkList.add(t);
-                } else {
-                    check = false;
-                }
-            }
-            if (check == true) {
-                answer += 1;
+        for (String t : checks) {
+            if (x.contains(t)) {
+                x = x.replace(t, "A");
             }
         }
-        System.out.println(answer);
+
+        System.out.println(x.length());
+
+
     }
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int n = Integer.parseInt(br.readLine());
+//        int answer = 0;
+//
+//        for (int i = 0; i < n; i++) {
+//            String x = br.readLine();
+//            char[] arr = x.toCharArray();
+//            List<String> checkList = new ArrayList<>();
+//            boolean check = true;
+//
+//            for (char a : arr) {
+//                String t = String.valueOf(a);
+//                if (checkList.size() == 0) {
+//                    checkList.add(t);
+//                } else if (checkList.contains(t) && checkList.get(checkList.size() - 1).equals(t)) {
+//                    checkList.add(t);
+//                } else if (!checkList.contains(t)) {
+//                    checkList.add(t);
+//                } else {
+//                    check = false;
+//                }
+//            }
+//            if (check == true) {
+//                answer += 1;
+//            }
+//        }
+//        System.out.println(answer);
+//    }
 
 
 
