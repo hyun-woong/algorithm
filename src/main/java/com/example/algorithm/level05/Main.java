@@ -3,6 +3,8 @@ package com.example.algorithm.level05;
 import java.io.*;
 import java.util.*;
 
+import static java.util.stream.Collectors.toMap;
+
 public class Main {
 
     public static void main(String[] args) throws IOException {
@@ -15,10 +17,7 @@ public class Main {
                 x = x.replace(t, "A");
             }
         }
-
         System.out.println(x.length());
-
-
     }
 //    public static void main(String[] args) throws IOException {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
