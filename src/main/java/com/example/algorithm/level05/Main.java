@@ -3,31 +3,69 @@ package com.example.algorithm.level05;
 import java.io.*;
 import java.util.*;
 
+import static java.util.stream.Collectors.toMap;
+
 public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String x = br.readLine();
+        char[] reX = x.toCharArray();
 
-        String[] a = x.split(" ");
+        Map<String, Integer> maps = new HashMap<>();
+        maps.put("ABC", 3);
+        maps.put("DEF", 4);
+        maps.put("GHI", 5);
+        maps.put("JKL", 6);
+        maps.put("MNO", 7);
+        maps.put("PQRS", 8);
+        maps.put("TUV", 9);
+        maps.put("WXYZ", 10);
 
-        char[] a1 = a[0].toCharArray();
-        char[] a2 = a[1].toCharArray();
+        int answer = 0;
 
-        StringBuilder re_a = new StringBuilder();
-        StringBuilder re_a2 = new StringBuilder();
+        for (char t : reX) {
+            Map<String, Integer> result = maps.entrySet().stream()
+                    .filter(entry -> entry.getKey().contains(String.valueOf(t)))
+                    .collect(toMap(Map.Entry::getKey, Map.Entry::getValue));
 
-        for (int i = 2; i >= 0; i--) {
-            re_a.append(String.valueOf(a1[i]));;
-            re_a2.append(String.valueOf(a2[i]));
+            String re = String.valueOf(result.keySet())
+                    .replace("[", "")
+                    .replace("]", "");
+
+           answer += maps.get(re);
         }
-
-        if (Integer.parseInt(String.valueOf(re_a)) < Integer.parseInt(String.valueOf(re_a2))) {
-            System.out.println(re_a2);
-        } else {
-            System.out.println(re_a);
-        }
+        System.out.println(answer);
     }
+
+
+
+
+
+
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        String x = br.readLine();
+//
+//        String[] a = x.split(" ");
+//
+//        char[] a1 = a[0].toCharArray();
+//        char[] a2 = a[1].toCharArray();
+//
+//        StringBuilder re_a = new StringBuilder();
+//        StringBuilder re_a2 = new StringBuilder();
+//
+//        for (int i = 2; i >= 0; i--) {
+//            re_a.append(String.valueOf(a1[i]));;
+//            re_a2.append(String.valueOf(a2[i]));
+//        }
+//
+//        if (Integer.parseInt(String.valueOf(re_a)) < Integer.parseInt(String.valueOf(re_a2))) {
+//            System.out.println(re_a2);
+//        } else {
+//            System.out.println(re_a);
+//        }
+//    }
 
 //    public static void main(String[] args) throws IOException {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
