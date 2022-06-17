@@ -1,26 +1,82 @@
 package com.example.algorithm.level05;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String x = br.readLine();
-        String[] arr = x.split(" ");
-        List<String> strs = new ArrayList<>();
 
-        for (String a : arr) {
-            if (!a.equals("")){
-                strs.add(a);
-            }
+        String[] a = x.split(" ");
+
+        char[] a1 = a[0].toCharArray();
+        char[] a2 = a[1].toCharArray();
+
+        StringBuilder re_a = new StringBuilder();
+        StringBuilder re_a2 = new StringBuilder();
+
+        for (int i = 2; i >= 0; i--) {
+            re_a.append(String.valueOf(a1[i]));;
+            re_a2.append(String.valueOf(a2[i]));
         }
-        System.out.println(strs.size());
+
+        if (Integer.parseInt(String.valueOf(re_a)) < Integer.parseInt(String.valueOf(re_a2))) {
+            System.out.println(re_a2);
+        } else {
+            System.out.println(re_a);
+        }
     }
+
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        String x = br.readLine();
+//        String upper = x.toUpperCase();
+//
+//        char[] arr = upper.toCharArray();
+//
+//        Map<String, Integer> cntMap = new HashMap<>();
+//
+//        for (char z : arr) {
+//            String zz = String.valueOf(z);
+//            cntMap.put(zz, cntMap.containsKey(zz) ? cntMap.get(zz) + 1 : 1);
+//        }
+//        Comparator<Map.Entry<String, Integer>> comparator = new Comparator<Map.Entry<String, Integer>>() {
+//            @Override
+//            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+//                return o1.getValue().compareTo(o2.getValue());
+//            }
+//        };
+//
+//        Map.Entry<String, Integer> maxEntry = Collections.max(cntMap.entrySet(), comparator);
+//
+//        int cnt = 0;
+//        for (String n : cntMap.keySet()) {
+//            if (Objects.equals(cntMap.get(n), maxEntry.getValue())) {
+//                cnt++;
+//            }
+//        }
+//        if (cnt > 1) {
+//            System.out.println("?");
+//        }else {
+//            System.out.println(maxEntry.getKey());
+//        }
+//    }
+
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        String x = br.readLine();
+//        String[] arr = x.split(" ");
+//        List<String> strs = new ArrayList<>();
+//
+//        for (String a : arr) {
+//            if (!a.equals("")){
+//                strs.add(a);
+//            }
+//        }
+//        System.out.println(strs.size());
+//    }
 
 //    public static void main(String[] args) throws IOException {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
