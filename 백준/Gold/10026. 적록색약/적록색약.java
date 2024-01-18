@@ -3,8 +3,8 @@ import java.io.*;
 public class Main {
     private static String[][] arr;
     private static boolean[][] visited;
-    private static int[] dx = {-1, 0, 0, 1};
-    private static int[] dy = {0, 1, -1, 0};
+    private static final int[] dx = {-1, 0, 0, 1};
+    private static final int[] dy = {0, 1, -1, 0};
     private static int n;
     
     public static void main(String[] args) throws IOException {
@@ -13,7 +13,6 @@ public class Main {
         
         init();
         insertArr(br);
-        
         int normal = searchDFS(true);
         
         initVisited();
@@ -32,10 +31,7 @@ public class Main {
     }
     
     private static void insertArr(BufferedReader br) throws IOException {
-        for (int i = 0; i < n; i++) {
-            String[] line = br.readLine().split("");
-            for (int j = 0; j < line.length; j++) arr[i][j] = line[j];
-        }
+        for (int i = 0; i < n; i++) arr[i] = br.readLine().split("");
     }
     
     private static int searchDFS(boolean isNormal) {
@@ -59,8 +55,7 @@ public class Main {
             int renewX = x + dx[i];
             int renewY = y + dy[i];
             
-            boolean isInvalidIdx = renewX < 0 || renewY < 0 || renewX >= n || renewY >= n;
-            if (isInvalidIdx || visited[renewX][renewY]) continue;
+            if (renewX < 0 || renewY < 0 || renewX >= n || renewY >= n || visited[renewX][renewY]) continue;
             
             String renewColor = isNormal ? arr[renewX][renewY] : getAbnormalColor(arr[renewX][renewY]);
             if (renewColor.equals(color)) {
@@ -70,9 +65,7 @@ public class Main {
         }
     }
     
-    /** 적록색약 일 때 녹색을 붉은색으로 치환 */
     private static String getAbnormalColor(String currentColor) {
-        boolean isRG = currentColor.equals("R") || currentColor.equals("G");
-        return isRG ? "R" : currentColor;
+        return currentColor.equals("R") || currentColor.equals("G") ? "R" : currentColor;
     }
 }
